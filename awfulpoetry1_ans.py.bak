@@ -1,0 +1,22 @@
+import random
+
+# Initialise variables
+article = ['a','the', 'an']
+subject = ['man', 'women', 'bird', 'person', 'alien']
+verb = ['jump', 'join', 'sprint', 'skulk', 'fly']
+adverb = ['loudly', 'quickly','stupidly', 'badly', 'quietly']
+
+# function to pick a word
+def pick(words):
+    i = random.randint(0, len(words - 1))
+    return words[i]
+
+# Iterate and create sentences
+count = 0
+while count < 5:
+    if random.randint(1,2) == 2:
+        print(pick(article), pick(subject), pick(verb))
+    else:
+        print(pick(article), pick(subject), pick(verb), pick(adverb))
+    count += 1
+    

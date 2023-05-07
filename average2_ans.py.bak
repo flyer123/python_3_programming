@@ -1,0 +1,51 @@
+# Request user to enter numbers
+num_list = []
+while True:
+    try:
+        s = input("Enter a number, space to stop: ")
+        if s == '':
+             break
+        i = int(s)
+        num_list.append(i)
+    except ValueError as err:
+        print(err)
+        
+
+# Print original array
+print("original list = ", num_list)
+
+# Sort the array
+i = 0
+while i < len(num_list) - 1:
+    j = i
+    while j <= len(num_list) - 1:
+        if num_list[j] < num_list[i]:
+            num_list[i], num_list[j] = num_list[j], num_list[i]
+        j += 1
+    i += 1
+
+# Print output
+print("sorted list = ", num_list)
+
+# Calculate mean and median, for it calculate sum
+sum_num = 0
+for i in num_list:
+    sum_num += i
+
+print("Mean = ", sum_num / len(num_list))
+
+# Check if there is even number of items or odd
+Odd = True
+
+mid = len(num_list) / 2
+if int(mid) == mid:
+    Odd = False
+    
+if Odd:
+    median = num_list[int(mid)]
+else:
+    median = (num_list[int(mid)] + num_list[int(mid) + 1]) / 2
+
+print("Median = ", median)
+
+
